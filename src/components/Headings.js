@@ -9,13 +9,13 @@ const Heading = styled.Text`
   font-family: 'Roboto';
   font-weight: bold;
   color: black;
-  padding-right: 10;
-  padding-left: 10;
-  font-size: 20;
+  padding: 10px;
+  font-size: 20px;
 `;
 
 const H1 = styled(Heading)`
   font-size: 50;
+  text-align: center;
 `;
 
 const H2 = styled(Heading)`

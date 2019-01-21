@@ -2,6 +2,8 @@ import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import styled from 'styled-components';
 import { Heading1 } from '../../components/Headings';
+import { PrimaryButton } from '../../components/Buttons';
+import routes from '../../navigation/routes';
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -12,6 +14,7 @@ class HomeScreen extends React.Component {
     return (
       <StyledView>
         <Heading1>Githubber</Heading1>
+        <PrimaryButton title="Most Popular Repos" onPress={() => this.props.navigation.navigate(routes.REPOS)} />
       </StyledView>
     );
   }
@@ -20,7 +23,8 @@ class HomeScreen extends React.Component {
 const StyledView = styled.View`
   background-color: powderblue;
   flex: 1;
-  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
   justify-content: center;
 `;
 
