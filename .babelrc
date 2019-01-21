@@ -1,15 +1,3 @@
 {
-  "presets": ["module:metro-react-native-babel-preset"],
-  "env": {
-    "development": {
-      "plugins": [
-        [
-          "inline-dotenv",
-          {
-            "path": ".env.local"
-          }
-        ]
-      ]
-    }
-  }
+  "presets": ["module:metro-react-native-babel-preset", "module:react-native-dotenv"]
 }
