@@ -6,6 +6,7 @@ const GET_REPOSITORIES = gql`
       nodes {
         ... on Repository {
           id
+          name
           nameWithOwner
           url
           description

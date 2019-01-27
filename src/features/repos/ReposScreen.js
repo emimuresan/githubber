@@ -2,12 +2,12 @@ import React from 'react';
 import { Query } from 'react-apollo';
 import Error from '../../components/Error';
 import Loading from '../../components/Loading';
-// import RepoListView from './RepoListView';
+import RepoListView from './RepoListView';
 import { GET_REPOSITORIES } from './queries';
 
-class ReposScreen extends React.Component {
+class ReposScreen extends React.PureComponent {
   static navigationOptions = {
-    title: 'Popular Repos',
+    title: 'Most Popular Repos',
   };
 
   render() {
@@ -22,10 +22,8 @@ class ReposScreen extends React.Component {
             return <Error title="Failed to load repositories" details={error.message} />;
           }
 
-          const repositories = data.search ? data.search.nodes : null;
-          console.log('repos:', repositories);
-          return null;
-          // <RepoListView repositories={repositories} selectedLanguage="JS" />;
+          const repos = data.search ? data.search.nodes : null;
+          return <RepoListView repos={repos} selectedLanguage="JS" />;
         }}
       </Query>
     );
