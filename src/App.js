@@ -10,11 +10,11 @@ import client from './api/client';
 const RootStack = createStackNavigator(
   {
     [routes.HOME]: HomeScreen,
-    [routes.REPOS]: ReposScreen
+    [routes.REPOS]: ReposScreen,
   },
   {
-    initialRouteName: routes.HOME
-  }
+    initialRouteName: routes.HOME,
+  },
 );
 
 const AppContainer = createAppContainer(RootStack);

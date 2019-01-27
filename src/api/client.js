@@ -10,14 +10,14 @@ const cache = new InMemoryCache();
  * REMOTE DATA
  */
 const httpLink = createHttpLink({
-  uri: 'https://api.github.com/graphql'
+  uri: 'https://api.github.com/graphql',
 });
 
 const middlewareLink = new ApolloLink((operation, forward) => {
   operation.setContext({
     headers: {
-      authorization: `Bearer ${GITHUB_TOKEN}`
-    }
+      authorization: `Bearer ${GITHUB_TOKEN}`,
+    },
   });
 
   return forward(operation);
@@ -30,7 +30,7 @@ const networkLink = middlewareLink.concat(httpLink);
  */
 const client = new ApolloClient({
   link: ApolloLink.from([networkLink]),
-  cache
+  cache,
 });
 
 export default client;

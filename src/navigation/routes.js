@@ -1,4 +1,4 @@
 export default {
   HOME: 'Home',
-  REPOS: 'Repos'
+  REPOS: 'Repos',
 };

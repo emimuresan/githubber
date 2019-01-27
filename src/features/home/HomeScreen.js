@@ -1,5 +1,4 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
 import styled from 'styled-components';
 import { Heading1 } from '../../components/Headings';
 import { PrimaryButton } from '../../components/Buttons';
@@ -7,7 +6,7 @@ import routes from '../../navigation/routes';
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
-    title: 'Home'
+    title: 'Home',
   };
 
   render() {

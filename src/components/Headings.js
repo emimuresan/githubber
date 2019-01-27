@@ -1,5 +1,4 @@
 import React from 'react';
-import { StyleSheet, Text } from 'react-native';
 import styled from 'styled-components';
 
 const Heading1 = ({ children }) => <H1>{children}</H1>;
