@@ -1,4 +1,5 @@
 export default {
   HOME: 'Home',
-  REPOS: 'Repos',
+  REPO_SELECTION: 'RepoSelection',
+  REPO_LIST: 'RepoList',
 };

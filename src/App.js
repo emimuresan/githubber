@@ -3,14 +3,16 @@ import React from 'react';
 import { ApolloProvider } from 'react-apollo';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import HomeScreen from './features/home/HomeScreen';
-import ReposScreen from './features/repos/ReposScreen';
+import RepoSelectionScreen from './features/repos/RepoSelectionScreen';
+import RepoListScreen from './features/repos/RepoListScreen';
 import routes from './navigation/routes';
 import client from './api/client';
 
 const RootStack = createStackNavigator(
   {
     [routes.HOME]: HomeScreen,
-    [routes.REPOS]: ReposScreen,
+    [routes.REPO_SELECTION]: RepoSelectionScreen,
+    [routes.REPO_LIST]: RepoListScreen,
   },
   {
     initialRouteName: routes.HOME,

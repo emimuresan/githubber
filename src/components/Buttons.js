@@ -1,13 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export const PrimaryButton = ({ onPress, title, ...restOfProps }) => (
+export const PrimaryButton = ({
+  onPress, title, children, ...restOfProps
+}) => (
   <CustomButton onPress={onPress} {...restOfProps}>
-    <ButtonText>{title}</ButtonText>
+    {title ? <ButtonText>{title}</ButtonText> : children}
   </CustomButton>
 );
 
+const SIZES = {
+  large: '90%',
+  medium: '50%',
+};
+
 const CustomButton = styled.TouchableOpacity`
+  width: ${props => (props.size ? SIZES[props.size] : 'auto')}
   justify-content: center;
   align-items: stretch;
   background-color: steelblue;
@@ -17,7 +25,7 @@ const CustomButton = styled.TouchableOpacity`
   border-radius: 10px;
 `;
 
-const ButtonText = styled.Text`
+export const ButtonText = styled.Text`
   font-family: 'Roboto';
   text-transform: uppercase;
   font-weight: bold;

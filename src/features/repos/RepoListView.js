@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Card from '../../components/Card';
 
 export default class RepoListView extends React.PureComponent {
   render() {
@@ -8,11 +9,13 @@ export default class RepoListView extends React.PureComponent {
       <List>
         {repos.map(repo => (
           <ListItem key={repo.id}>
-            <Header>
-              <Name numberOfLines={1}>{`${repo.name}`}</Name>
-              <StarCount>⭐ {repo.stargazers.totalCount.toLocaleString()}</StarCount>
-            </Header>
-            <Description numberOfLines={2}>{repo.description}</Description>
+            <Card>
+              <Header>
+                <Name numberOfLines={1}>{`${repo.name}`}</Name>
+                <StarCount>⭐ {repo.stargazers.totalCount.toLocaleString()}</StarCount>
+              </Header>
+              <Description numberOfLines={2}>{repo.description}</Description>
+            </Card>
           </ListItem>
         ))}
       </List>
@@ -30,11 +33,6 @@ const List = styled.ScrollView`
 const ListItem = styled.View`
   flex: 3;
   flex-direction: column;
-  background-color: white;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  box-shadow: 0 2px 1px rgba(33, 33, 33, 0.2);
 `;
 
 const Header = styled.View`

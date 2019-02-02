@@ -6,14 +6,15 @@ import RepoListView from './RepoListView';
 import { GET_REPOSITORIES } from './queries';
 
 class ReposScreen extends React.PureComponent {
-  static navigationOptions = {
-    title: 'Most Popular Repos',
-  };
+  static navigationOptions = ({ navigation }) => ({
+    title: `🎉 ${navigation.getParam('selectedLanguage')} Repos`,
+  });
 
   render() {
-    const languageString = 'language:JavaScript';
+    const selectedLanguage = this.props.navigation.getParam('selectedLanguage');
+
     return (
-      <Query query={GET_REPOSITORIES} variables={{ byLanguage: languageString }}>
+      <Query query={GET_REPOSITORIES} variables={{ byLanguage: `language:${selectedLanguage}` }}>
         {({ loading, error, data }) => {
           if (loading) {
             return <Loading />;
@@ -23,7 +24,7 @@ class ReposScreen extends React.PureComponent {
           }
 
           const repos = data.search ? data.search.nodes : null;
-          return <RepoListView repos={repos} selectedLanguage="JS" />;
+          return <RepoListView repos={repos} />;
         }}
       </Query>
     );

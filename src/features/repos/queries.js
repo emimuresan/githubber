@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 
-const GET_REPOSITORIES = gql`
+export const GET_REPOSITORIES = gql`
   query GetRepositiories($byLanguage: String!) {
     search(type: REPOSITORY, query: $byLanguage, first: 10) {
       nodes {
@@ -20,4 +20,18 @@ const GET_REPOSITORIES = gql`
   }
 `;
 
-export { GET_REPOSITORIES };
+export const GET_LANGUAGE = gql`
+  {
+    language @client {
+      value
+    }
+  }
+`;
+
+export const SET_LANGUAGE = gql`
+  mutation SetLanguage($language: String!) {
+    setLanguage(language: $language) @client {
+      language
+    }
+  }
+`;
