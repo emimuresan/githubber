@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { ApolloConsumer, Query } from 'react-apollo';
 import LANGUAGES from '../../constants/programmingLanguages';
 import routes from '../../navigation/routes';
-import { GET_LANGUAGE, SET_LANGUAGE } from './queries';
+import { GET_LANGUAGE, SET_LANGUAGE } from './operations';
 import { PrimaryButton } from '../../components/Buttons';
 import Card from '../../components/Card';
 

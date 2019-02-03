@@ -47,13 +47,14 @@ const Description = styled.Text`
 
 const HeaderItem = styled.Text`
   font-size: 20px;
-  flex: 1;
 `;
 
 const Name = styled(HeaderItem)`
   font-weight: bold;
+  width: 65%;
 `;
 
 const StarCount = styled(HeaderItem)`
   text-align: right;
+  width: 35%;
 `;

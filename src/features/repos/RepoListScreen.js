@@ -3,7 +3,7 @@ import { Query } from 'react-apollo';
 import Error from '../../components/Error';
 import Loading from '../../components/Loading';
 import RepoListView from './RepoListView';
-import { GET_REPOSITORIES } from './queries';
+import { GET_REPOSITORIES } from './operations';
 
 class ReposScreen extends React.PureComponent {
   static navigationOptions = ({ navigation }) => ({
