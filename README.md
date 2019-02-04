@@ -26,7 +26,7 @@
   - mutations: star a repository
 - [x] Local data also managed by apollo-client using [apollo-link-state](https://www.apollographql.com/docs/react/essentials/local-state.html)
   - store user language selection in Apollo cache
-- [ ] Offline support implemented using [TBA](www.link)
+- [ ] Offline support
   - repositories list can be viewed while offline
   - mutations?
 - [ ] Unit tests with [jest](https://jestjs.io/docs/en/tutorial-react-native)
@@ -65,3 +65,8 @@ $ yarn ios OR yarn android
 - `yarn test` - runs available unit tests
 
 ## Screenshots
+
+![Screen 1](assets/screenshots/screen1.png)
+![Screen 2](assets/screenshots/screen2.png)
+![Screen 3](assets/screenshots/screen3.png)
+![Screen 4](assets/screenshots/screen4.png)
