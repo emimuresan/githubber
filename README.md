@@ -15,12 +15,21 @@
 
 ## Key Features
 
-- [x] project supports building native code
-- [x] in-app navigation/routing, handled via [react-navigation](https://reactnavigation.org/)
-- [x] client-server communication done using [apollo-client](https://www.apollographql.com/docs/react/recipes/react-native.html)
-- [x] styling using [styled-components](https://www.styled-components.com/docs/basics#react-native)
-- [ ] unit tests with [jest](https://jestjs.io/docs/en/tutorial-react-native)
-- [ ] offline support
+- [x] Support for building native code
+- [x] Styling using [styled-components](https://www.styled-components.com/docs/basics#react-native)
+- [x] In-app navigation/routing handled via [react-navigation](https://reactnavigation.org/)
+  - creating a stack navigator
+  - navigation between screens, passing parameters to routes
+  - configuring the header bar
+- [x] Remote data managed using [apollo-client](https://www.apollographql.com/docs/react/recipes/react-native.html)
+  - queries: get first 10 repositiories by language
+  - mutations: star a repository
+- [x] Local data also managed by apollo-client using [apollo-link-state](https://www.apollographql.com/docs/react/essentials/local-state.html)
+  - store user language selection in Apollo cache
+- [ ] Offline support implemented using [TBA](www.link)
+  - repositories list can be viewed while offline
+  - mutations?
+- [ ] Unit tests with [jest](https://jestjs.io/docs/en/tutorial-react-native)
 
 ## Environment
 
@@ -36,9 +45,20 @@ Environment:
   Android Studio: 3.2 AI-181.5540.7.32.5056338
 ```
 
-## Scripts
+## Getting Started
 
-- `yarn install` - install dependencies
+To communicate with the GraphQL server, you'll need an OAuth token with the right scopes. Follow the steps in ["Creating a personal access token for the command line"](https://help.github.com/articles/creating-an-access-token-for-command-line-use/) to create a token. After getting a token, follow these steps to start the app:
+
+```
+$ git clone https://github.com/emimuresan/githubber.git
+$ cd githubber && touch .env
+$ echo "GITHUB_TOKEN=<your token here>" > .env
+$ yarn install
+$ yarn ios OR yarn android
+```
+
+## Available Scripts
+
 - `yarn ios` - start the app in the iOS simulator
 - `yarn android` - start the app in the Android emulator
 - `yarn lint` - runs eslint checks + fixes
