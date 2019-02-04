@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Error = ({ title, details }) => (
   <ErrorContainer>
-    <ErrorText>{title}</ErrorText>
+    <ErrorText>💩 Oops. {title}</ErrorText>
     <ErrorText>{details}</ErrorText>
   </ErrorContainer>
 );

@@ -12,7 +12,7 @@ class HomeScreen extends React.Component {
   render() {
     return (
       <StyledView>
-        <Heading1>Githubber</Heading1>
+        <Logo>Githubber</Logo>
         <PrimaryButton
           title="Most Popular Repos"
           onPress={() => this.props.navigation.navigate(routes.REPO_SELECTION)}
@@ -28,6 +28,10 @@ const StyledView = styled.View`
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
+`;
+
+const Logo = styled(Heading1)`
+  padding: 10px;
 `;
 
 export default HomeScreen;

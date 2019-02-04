@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const Loading = ({ backgroundColor }) => (
   <LoadingContainer backgroundColor={backgroundColor}>
-    <ActivityIndicator size="large" color="darkblue" />
+    <ActivityIndicator size="large" color="steelblue" />
   </LoadingContainer>
 );
 
