@@ -2,7 +2,7 @@ import React from 'react';
 import { PickerIOS, Picker as PickerAndroid, Platform } from 'react-native';
 import styled from 'styled-components';
 import { ApolloConsumer, Query } from 'react-apollo';
-import LANGUAGES from '../../constants/programmingLanguages';
+import LANGUAGES from '../../data/programmingLanguages';
 import routes from '../../navigation/routes';
 import { GET_LANGUAGE, SET_LANGUAGE } from './operations';
 import { PrimaryButton } from '../../components/Buttons';
