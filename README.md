@@ -26,9 +26,9 @@
   - mutations: star a repository
 - [x] Local data also managed by apollo-client using [apollo-link-state](https://www.apollographql.com/docs/react/essentials/local-state.html)
   - store user language selection in Apollo cache
-- [ ] Offline support
+- [x] Offline support using [apollo-cache-persist](https://github.com/apollographql/apollo-cache-persist)
+  - language selection is persisted
   - repositories list can be viewed while offline
-  - mutations?
 - [ ] Unit tests with [jest](https://jestjs.io/docs/en/tutorial-react-native)
 
 ## Environment
