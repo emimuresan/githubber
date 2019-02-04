@@ -7,12 +7,19 @@ export const GET_REPOSITORIES = gql`
         ... on Repository {
           id
           name
-          nameWithOwner
           url
+          createdAt
+          pushedAt
+          updatedAt
           description
           forkCount
+          viewerHasStarred
           stargazers {
             totalCount
+          }
+          owner {
+            avatarUrl
+            login
           }
         }
       }
@@ -32,6 +39,20 @@ export const SET_LANGUAGE = gql`
   mutation SetLanguage($language: String!) {
     setLanguage(language: $language) @client {
       language
+    }
+  }
+`;
+
+export const ADD_STAR = gql`
+  mutation AddStar($input: AddStarInput!) {
+    addStar(input: $input) {
+      clientMutationId
+      starrable {
+        stargazers {
+          totalCount
+        }
+        viewerHasStarred
+      }
     }
   }
 `;

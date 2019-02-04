@@ -14,7 +14,11 @@ class ReposScreen extends React.PureComponent {
     const selectedLanguage = this.props.navigation.getParam('selectedLanguage');
 
     return (
-      <Query query={GET_REPOSITORIES} variables={{ byLanguage: `language:${selectedLanguage}` }}>
+      <Query
+        query={GET_REPOSITORIES}
+        variables={{ byLanguage: `language:${selectedLanguage}` }}
+        fetchPolicy="cache-and-network"
+      >
         {({ loading, error, data }) => {
           if (loading) {
             return <Loading />;
