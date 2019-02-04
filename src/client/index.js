@@ -4,6 +4,7 @@ import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { withClientState } from 'apollo-link-state';
 import { GITHUB_TOKEN } from 'react-native-dotenv';
+import { onError } from 'apollo-link-error';
 
 const apolloCache = new InMemoryCache();
 
@@ -54,10 +55,25 @@ const stateLink = withClientState({
 });
 
 /**
+ * ERROR HANDLING
+ */
+
+const errorLink = onError(({ graphQLErrors, networkError }) => {
+  if (graphQLErrors) {
+    graphQLErrors.forEach(({ message, locations, path }) => {
+      console.log(`[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`); // eslint-disable-line
+    });
+  }
+  if (networkError) {
+    console.log(`[Network error]: ${networkError}`); // eslint-disable-line
+  }
+});
+
+/**
  * APOLLO CLIENT
  */
 const client = new ApolloClient({
-  link: ApolloLink.from([stateLink, networkLink]), // order matters
+  link: ApolloLink.from([stateLink, errorLink, networkLink]), // order matters
   cache: apolloCache,
 });
 
