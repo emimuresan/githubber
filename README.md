@@ -33,7 +33,7 @@
 
 ## Environment
 
-This app was developed with the following env setup:
+This app was developed following the steps in the react-native docs - ["Building projects with native code"](https://facebook.github.io/react-native/docs/getting-started.html). Env setup:
 
 ```
 Environment:
